@@ -128,8 +128,8 @@ if changed:
 def chat(uid, msg):
     host = 'https://graph.facebook.com/v2.6/me/'
     path = 'messages/'
-    params = urllib.parse.urlencode({"access_token": ''})
     d = {
+	  'access_token' : '',
       "messaging_type": "UPDATE",
       "recipient": {
         "id": uid
@@ -138,7 +138,7 @@ def chat(uid, msg):
         "text": msg
       }
     }
-    url = "{host}{path}?{params}".format(host=host, path=path, params=params)
+    url = host + path
 
     from urllib import request, parse
     data = parse.urlencode(d).encode()
