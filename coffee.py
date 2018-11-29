@@ -62,7 +62,7 @@ def qchat(uid, text, menu):
     host = 'https://graph.facebook.com/v2.6/me/'
     path = 'messages/'
     d = {
-	  'access_token' : 'DQVJzcnY4OEMyMm5iQnU5dlpZAd2thTTZADUk1FTkVFR2VWU3BkaGNHaTR1WFdpdkFTaDgxeVFIVjFPalRrSVdVRzRIOHFlV0llNks3c2Y1bU51cTR6SmIzaEhRNGlRbFZANOHpYZAnVVd1V4X1UtVVZAkYm0yVHFJNl9ncFk0dHFrS1U3YmIxMGkzeFhXVDRLcFNGbG8xY0phdm0tN09QX1JKS01TdUR3WmFUNzVPSE0tZA2lxT2dFNVFDVFdWSWpLRFBXWGpXUHdB',
+	  'access_token' : ACCESS_TOKEN,
       "messaging_type": "UPDATE",
       "recipient": {
         "id": uid
