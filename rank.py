@@ -136,7 +136,7 @@ def chat(uid, msg):
     host = 'https://graph.facebook.com/v2.6/me/'
     path = 'messages/'
     d = {
-	  'access_token' : 'DQVJ2RDVON01zblpNUDFWVU5KTFdlaXJKLTRIeEVSNkc4Ym13azRYVUswRl9EN21uX2JxQ3dGQ3NhZAlB4LWdEQnUxQlZAfZA1VUem5BQ2lTaEpuNl9SNnd5c0k2LWRfcVpGdWwtYUFuakdMYkJhTnRpX3lwREdYZA3pvc2RTQloyZAXhQMkR1cUJ6alF2ZAFhDNkpubjg1VUw4YU1ncHFQbjdod2hLUEdWX0ZA2WGJMck9VQVBCdHkxSlYzNXBub29FRnhwVTNST3lB',
+	  'access_token' : '',
       "messaging_type": "UPDATE",
       "recipient": {
         "id": uid
