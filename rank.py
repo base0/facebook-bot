@@ -74,7 +74,7 @@ changed = False
 
 message = []
 for k, v in web_data.items():
-    try: 
+    try:
         if web_data[k] != file_data[k]:
             message.append((k, web_data[k]))
             changed = True
@@ -85,10 +85,10 @@ approved = []
 for k in file_data:
     if k not in web_data:
         approved.append(k)
-		
 
 
-		
+
+
 # In[6]:
 
 
@@ -125,7 +125,7 @@ from shutil import copyfile
 import datetime
 
 if changed:
-    copyfile('status.csv', 'status {}.csv'.format(str(datetime.datetime.now()).split(' ')[0]))
+    copyfile('status.csv', 'status-{}.csv'.format(str(datetime.datetime.now()).split(' ')[0]))
     write_csv(web_data)
 
 
@@ -136,7 +136,7 @@ def chat(uid, msg):
     host = 'https://graph.facebook.com/v2.6/me/'
     path = 'messages/'
     d = {
-	  'access_token' : '',
+	  'access_token' : 'DQVJ0LWw4bDdVTVJ3RWN6MGNYRDRicmRiX1B0Y3A2T0NXbDZAUcUhvYkJ3RXhlUTM0c3VYYmxnNk93LW1xVkxKS1JqWHItWWdlRkJ0Qm15aWRiQ1REZAjhoNGtELTlpbm1uRVNiWC11SUFjU2NXRDFfZAVRoUkxxejhmMGNSS2R4b2ZAyRm10QVdGS0I0U2tXZAFRvTmhsMmJLNjNrSjFhVUJObEJrQWMzRWpVcGh1NUFMVTg0dDZAmaHFFOFZAGQ0h5bndzRUhzclFB',
       "messaging_type": "UPDATE",
       "recipient": {
         "id": uid
@@ -160,6 +160,6 @@ if len(message) == 0 and len(approved) == 0:
 
 for m in approved:
     chat('100013848789026', 'ยินดีด้วยครับ ' + m)
-    
+
 for m in message:
     chat('100013848789026', ' '.join(m))
