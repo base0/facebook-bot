@@ -136,7 +136,7 @@ def chat(uid, msg):
     host = 'https://graph.facebook.com/v2.6/me/'
     path = 'messages/'
     d = {
-	  'access_token' : 'DQVJ0LWw4bDdVTVJ3RWN6MGNYRDRicmRiX1B0Y3A2T0NXbDZAUcUhvYkJ3RXhlUTM0c3VYYmxnNk93LW1xVkxKS1JqWHItWWdlRkJ0Qm15aWRiQ1REZAjhoNGtELTlpbm1uRVNiWC11SUFjU2NXRDFfZAVRoUkxxejhmMGNSS2R4b2ZAyRm10QVdGS0I0U2tXZAFRvTmhsMmJLNjNrSjFhVUJObEJrQWMzRWpVcGh1NUFMVTg0dDZAmaHFFOFZAGQ0h5bndzRUhzclFB',
+	  'access_token' : '',
       "messaging_type": "UPDATE",
       "recipient": {
         "id": uid
@@ -154,12 +154,16 @@ def chat(uid, msg):
 
 
 # In[11]:
+def send_message(msg):
+    users = ['100013848789026', '100018365677133',]
+    for u in users:
+        chat(u, msg)
 
 if len(message) == 0 and len(approved) == 0:
-    chat('100013848789026', 'no update')
+    send_message('no update')
 
 for m in approved:
-    chat('100013848789026', 'ยินดีด้วยครับ ' + m)
+    send_message('ยินดีด้วยครับ ' + m)
 
 for m in message:
-    chat('100013848789026', ' '.join(m))
+    send_message(' '.join(m))
